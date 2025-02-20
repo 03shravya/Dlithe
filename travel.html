@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore The World - Travel Agency</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: url('travel.jpg') no-repeat center center/cover;
+            height: 70vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        header p {
+            font-size: 1.5em;
+            position: relative;
+            z-index: 1;
+            color: #ffeb3b;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .destinations {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 320px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .contact {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #2196F3, #00BCD4);
+            color: white;
+            border-radius: 10px;
+            margin: 40px auto;
+            width: 80%;
+        }
+        .contact input, .contact textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact button {
+            padding: 12px 24px;
+            background: #ffeb3b;
+            color: #333;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact button:hover {
+            background: #fdd835;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore The World</h1>
+        <p>Your journey begins here!</p>
+    </header>
+    <div class="container">
+        <h2>Featured Destinations</h2>
+        <div class="destinations">
+            <div class="card">
+                <img src="paris.jpg" alt="Paris">
+                <h3>Paris, France</h3>
+                <p>Experience the city of love and lights.</p>
+            </div>
+            <div class="card">
+                <img src="bali.jpg" alt="Bali">
+                <h3>Bali, Indonesia</h3>
+                <p>Discover paradise with tropical beaches.</p>
+            </div>
+            <div class="card">
+                <img src="nyc.jpg" alt="New York">
+                <h3>New York, USA</h3>
+                <p>Explore the city that never sleeps.</p>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
