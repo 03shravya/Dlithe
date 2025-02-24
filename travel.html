@@ -32,18 +32,9 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
         }
-        header h1 {
-            font-size: 4em;
-            margin: 0;
-            color: white;
+        header h1, header p {
             position: relative;
             z-index: 1;
-        }
-        header p {
-            font-size: 1.5em;
-            position: relative;
-            z-index: 1;
-            color: #ffeb3b;
         }
         .container {
             width: 90%;
@@ -74,34 +65,58 @@
             height: 200px;
             border-radius: 10px;
         }
-        .contact {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, #2196F3, #00BCD4);
+        .btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background: #007bff;
             color: white;
-            border-radius: 10px;
-            margin: 40px auto;
-            width: 80%;
-        }
-        .contact input, .contact textarea {
-            width: 90%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .contact button {
-            padding: 12px 24px;
-            background: #ffeb3b;
-            color: #333;
-            font-size: 1em;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
         }
-        .contact button:hover {
-            background: #fdd835;
+        .btn:hover {
+            background: #0056b3;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-content {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            width: 50%;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            font-size: 1.5em;
+            position: relative;
+        }
+        .popup-content input, .popup-content button {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .popup-content input[type="date"] {
+            font-size: 2em;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: red;
         }
     </style>
 </head>
@@ -117,31 +132,67 @@
                 <img src="paris.jpg" alt="Paris">
                 <h3>Paris, France</h3>
                 <p>Experience the city of love and lights.</p>
+                <button class="btn" onclick="openPopup('parisPopup')">Travel Now</button>
             </div>
             <div class="card">
                 <img src="bali.jpg" alt="Bali">
                 <h3>Bali, Indonesia</h3>
                 <p>Discover paradise with tropical beaches.</p>
+                <button class="btn" onclick="openPopup('baliPopup')">Travel Now</button>
             </div>
             <div class="card">
                 <img src="nyc.jpg" alt="New York">
                 <h3>New York, USA</h3>
                 <p>Explore the city that never sleeps.</p>
+                <button class="btn" onclick="openPopup('newyorkPopup')">Travel Now</button>
             </div>
         </div>
     </div>
-    <div class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+
+    <div id="parisPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('parisPopup')">&times;</span>
+            <form>
+                <input type="text" placeholder="Full Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="date"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
+
+    <div id="baliPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('baliPopup')">&times;</span>
+            <form>
+                <input type="text" placeholder="Full Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="date"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="newyorkPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('newyorkPopup')">&times;</span>
+            <form>
+                <input type="text" placeholder="Full Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="date"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
 </body>
 </html>
-
-
-
-
