@@ -104,11 +104,48 @@
         .close-btn:hover {
             color: darkred;
         }
+        .register-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+            font-size: 16px;
+            z-index: 2;
+        }
+        .register-btn:hover {
+            background: #cc5200;
+        }
+        
+        .reset-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #d9534f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+            z-index: 2;
+        }
+        .reset-btn:hover {
+            background: #c9302c;
+        }
     </style>
 </head>
 <body>
     <h1>Latest News & Blogs</h1>
-    
+    <button id="registerBtn" class="register-btn" onclick="openRegisterPopup()">Register</button>
+    <button id="resetBtn" class="reset-btn" onclick="resetRegistration()">Reset Registration</button>
+
     <div class="news-container">
         <div class="news-card">
             <img src="ai.jpg" alt="Blog 1">
@@ -171,6 +208,18 @@
             <p>Web 3.0 aims to decentralize the internet, bringing more privacy, transparency, and user control...</p>
         </div>
     </div>
+
+    <div id="registerPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
+            <h2>Register</h2>
+            <form onsubmit="registerUser(event)">
+                <input type="text" id="fullName" placeholder="Full Name" required><br>
+                <input type="email" id="email" placeholder="Email" required><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
     
     <script>
         function openPopup(id) {
@@ -180,6 +229,31 @@
         function closePopup(id) {
             document.getElementById(id).style.display = "none";
         }
+        function openRegisterPopup() {
+            document.getElementById("registerPopup").style.display = "flex";
+        }
+
+        function closeRegisterPopup() {
+            document.getElementById("registerPopup").style.display = "none";
+        }
+
+        function registerUser(event) {
+            event.preventDefault();
+            localStorage.setItem("registered", "true");
+            document.getElementById("registerBtn").style.display = "none";
+            closeRegisterPopup();
+        }
+
+        function resetRegistration() {
+            localStorage.removeItem("registered");
+            document.getElementById("registerBtn").style.display = "block";
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem("registered") === "true") {
+                document.getElementById("registerBtn").style.display = "none";
+            }
+        };
     </script>
 </body>
 </html>
