@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore The World - Travel Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 id="greeting"></h2>
+        <h1>Explore The World</h1>
+        <p>Your journey begins here!</p>
+        <button id="registerBtn" class="register-btn" onclick="openRegisterPopup()">Register</button>
+        <button id="resetBtn" class="reset-btn" onclick="resetRegistration()">Reset Registration</button>
+    </header>
+
+    <div class="container">
+        <h2>Featured Destinations</h2>
+        <div class="destinations">
+            <div class="card">
+                <img src="paris.jpg" alt="Paris">
+                <h3>Paris, France</h3>
+                <p>Experience the city of love and lights.</p>
+                <button class="btn" onclick="bestTravelSeason('paris')">Best Time to Visit Paris</button>
+                <button class="btn" onclick="openPopup('parisPopup')">Travel Now</button>
+            </div>
+            <div class="card">
+                <img src="bali.jpg" alt="Bali">
+                <h3>Bali, Indonesia</h3>
+                <p>Discover paradise with tropical beaches.</p>
+                <button class="btn" onclick="bestTravelSeason('bali')">Best Time to Visit Bali</button>
+                <button class="btn" onclick="openPopup('baliPopup')">Travel Now</button>
+            </div>
+            <div class="card">
+                <img src="nyc.jpg" alt="New York">
+                <h3>New York, USA</h3>
+                <p>Explore the city that never sleeps.</p>
+                <button class="btn" onclick="bestTravelSeason('nyc')">Best Time to Visit New York</button>
+                <button class="btn" onclick="openPopup('newyorkPopup')">Travel Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="registerPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
+            <h2>Register</h2>
+            <form onsubmit="registerUser(event)">
+                <input type="text" id="fullName" placeholder="Full Name" required><br>
+                <input type="email" id="email" placeholder="Email" required><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="parisPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('parisPopup')">&times;</span>
+            <h2>Travel Booking - Paris</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="date"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="baliPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('baliPopup')">&times;</span>
+            <h2>Travel Booking - Bali</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="date"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="newyorkPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('newyorkPopup')">&times;</span>
+            <h2>Travel Booking - New York</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="date"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="visitPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('visitPopup')">&times;</span>
+            <h2>Best Time to Visit</h2>
+            <p id="popup-message">Loading...</p>
+            <button class="btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>   
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

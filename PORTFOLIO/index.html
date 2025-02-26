@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Shravya S Devadiga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a onclick="openModal('projects')">Projects</a>
+        <a onclick="openModal('skills')">Skills</a>
+        <a onclick="openModal('certifications')">Certifications</a>
+        <a onclick="openModal('languages')">Languages</a>
+        <a onclick="openModal('hobbies')">Hobbies</a>
+        <a onclick="openModal('contact')">Contact</a>
+        <a onclick="calculateAge()">Calculate Age</a>
+        <a onclick="toggleTheme()">Toggle Theme</a>
+    </nav>
+
+    <div class="container">
+        <h1>Shravya S Devadiga</h1>
+        <p>AI & Data Science | Web Developer | Python Enthusiast</p>
+        <p>Seeking a dynamic role that allows me to grow professionally while making a meaningful impact on organizational success.</p>
+        <p id="greeting-message"></p>
+    </div>
+
+    <div id="projects" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('projects')">&times;</span>
+            <h2>Projects</h2>
+            <p>1. College Admission Prediction System (ARIMA Model)</p>
+            <p>2. Weather Website (HTML, CSS, JavaScript)</p>
+            <p>3. AI-based Advisory System for Farming</p>
+            <p>4. Rock-Paper-Scissors and Hangman Game (Python)</p>
+        </div>
+    </div>
+
+    <div id="skills" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('skills')">&times;</span>
+            <h2>Skills</h2>
+            <div id="skills-list"></div>
+        </div>
+    </div>
+
+    <div id="certifications" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('certifications')">&times;</span>
+            <h2>Certifications</h2>
+            <p>Git and GitHub - Visharya Technologies</p>
+            <p>Full Stack Development (MERN) - CESL Academics</p>
+        </div>
+    </div>
+
+    <div id="languages" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('languages')">&times;</span>
+            <h2>Languages</h2>
+            <p>English, Kannada, Hindi</p>
+        </div>
+    </div>
+
+    <div id="hobbies" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('hobbies')">&times;</span>
+            <h2>Hobbies</h2>
+            <p>Drawing, Cooking</p>
+        </div>
+    </div>
+
+    <div id="contact" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact')">&times;</span>
+            <h2>Contact</h2>
+            <p>Email: devadigashravyas3@gmail.com</p>
+            <p>Phone: +91 9945430483</p>
+            <p>Address: Padubidri, Udupi, Karnataka</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
