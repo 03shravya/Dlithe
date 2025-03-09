@@ -1,132 +1,186 @@
+/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    line-height: 1.6;
+    background-color: #f0f8ff; /* Light background color */
+    text-align: center;
 }
+
 header {
-    background: url('travel.jpg') no-repeat center center/cover;
-    height: 70vh;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-header h1, header p {
-    position: relative;
-    z-index: 1;
-}
-.container {
-    width: 90%;
-    margin: auto;
-    padding: 40px 0;
-    text-align: center;
-}
-.destinations {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 320px;
-    transition: transform 0.3s;
-}
-.card:hover {
-    transform: scale(1.05);
-}
-.card img {
-    width: 100%;
-    height: 200px;
-    border-radius: 10px;
-}
-.btn {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.btn:hover {
-    background: #0056b3;
-}
-.register-btn, .reset-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #ff6600;
+    background: #0077cc; /* Header background color */
     color: white;
     padding: 10px 20px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+}
+
+nav ul {
+    display: flex; /* Use flexbox for horizontal layout */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px; /* Space between navigation items */
+}
+
+nav ul li a, nav ul li button {
+    color: white;
+    text-decoration: none;
+    background: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px; /* Adjust font size for better visibility */
+    transition: color 0.3s; /* Transition for hover effect */
 }
-.reset-btn {
-    right: auto;
-    left: 20px;
-    background: #d9534f;
+
+nav ul li a:hover, nav ul li button:hover {
+    color: #ffcc00; /* Change color on hover */
 }
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+
+/* Home Section */
+#home {
+    background: url('baxkground.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.popup-content {
-    background: white;
-    padding: 50px;
-    border-radius: 10px;
-    width: 50%;
+    color: white;
     text-align: center;
+
+
+}
+.your-element {
+    height: 300px; /* Set a specific height */
+    width: 100%; /* Set width to 100% or a specific value */
+}
+
+#travelButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff9900; /* Button color */
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+#travelButton:hover {
+    background-color: #e68a00; /* Darker shade on hover */
+}
+
+/* Destinations Section */
+#destinations {
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-filter {
+    margin-bottom: 20px;
+}
+
+.destination-filter input {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+}
+
+/* Destination List */
+.destination-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.destination {
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.destination img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination h3 {
+    margin: 10px 0;
+}
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 60px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.popup-content {
     position: relative;
 }
-.popup-content h2 {
-    margin-bottom: 15px;
+
+/* Styles for the popup input fields */
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="date"] {
+    font-size: 18px; /* Increase font size */
+    padding: 10px; /* Add some padding for better appearance */
+    width: 100%; /* Make inputs full width */
+    margin-bottom: 10px; /* Add space between inputs */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Rounded corners */
+    align-items: center;
 }
 
-.popup-content form input {
-    width: 80%;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Optional: Style the submit button */
+.popup-content button[type="submit"] {
+    font-size: 18px; /* Increase font size for the button */
+    padding: 10px 15px; /* Add padding */
+    background-color: #0077cc; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
 }
 
-.popup-content form button {
-    background: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+.popup-content button[type="submit"]:hover {
+    background-color: #005fa3; /* Darker shade on hover */
 }
 
-.popup-content form button:hover {
-    background: #0056b3;
-}
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
     color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .destination-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination {
+        width: 90%; /* Make destinations full width on smaller screens */
+    }
 }

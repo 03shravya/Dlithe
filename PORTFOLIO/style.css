@@ -1,27 +1,61 @@
+/* Reset and Default Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Light Mode (Default) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --nav-bg: #ffffff;
+    --nav-text: #000;
+    --modal-bg: #fff;
+    --modal-text: #000;
+    --btn-bg: #007bff;
+    --btn-hover: #0056b3;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-color: #1a237e;
+    --text-color: white;
+    --nav-bg: #222;
+    --nav-text: white;
+    --modal-bg: #444;
+    --modal-text: #f4f4f4;
+    --btn-bg: #ff6600;
+    --btn-hover: #cc5200;
+}
+
+/* Body Styling */
 body {
-    background-color: #1a237e;
-    color: white;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Navigation Bar */
 nav {
     position: absolute;
     top: 20px;
     width: 100%;
     text-align: center;
+    background: var(--nav-bg);
+    padding: 10px 0;
+    transition: background 0.3s ease;
 }
+
 nav a {
-    color: white;
+    color: var(--nav-text);
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -29,20 +63,28 @@ nav a {
     cursor: pointer;
     transition: color 0.3s;
 }
+
 nav a:hover {
     color: #ffcc00;
 }
+
+/* Container */
 .container {
     max-width: 80%;
 }
+
+/* Headings and Paragraphs */
 h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
+
 p {
     font-size: 1.5em;
     margin-bottom: 20px;
 }
+
+/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -54,15 +96,19 @@ p {
     background-color: rgba(0, 0, 0, 0.8);
     padding-top: 100px;
 }
+
 .modal-content {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--modal-bg);
+    color: var(--modal-text);
     margin: auto;
     padding: 20px;
     border-radius: 10px;
     width: 60%;
     text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Close Button */
 .close {
     color: red;
     float: right;

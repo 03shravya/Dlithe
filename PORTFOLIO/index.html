@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
     <nav>
         <a onclick="openModal('projects')">Projects</a>
         <a onclick="openModal('skills')">Skills</a>
@@ -15,7 +15,6 @@
         <a onclick="openModal('languages')">Languages</a>
         <a onclick="openModal('hobbies')">Hobbies</a>
         <a onclick="openModal('contact')">Contact</a>
-        <a onclick="calculateAge()">Calculate Age</a>
         <a onclick="toggleTheme()">Toggle Theme</a>
     </nav>
 
@@ -30,9 +29,9 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('projects')">&times;</span>
             <h2>Projects</h2>
-            <p>1. College Admission Prediction System (ARIMA Model)</p>
-            <p>2. Weather Website (HTML, CSS, JavaScript)</p>
-            <p>3. AI-based Advisory System for Farming</p>
+            <p>1. Knee Osteoarthritis Detection Using CNN</p>
+            <p>2. College Admission Prediction System (ARIMA Model)</p>
+            <p>3. Weather Website (HTML, CSS, JavaScript)</p>
             <p>4. Rock-Paper-Scissors and Hangman Game (Python)</p>
         </div>
     </div>
@@ -75,10 +74,12 @@
             <span class="close" onclick="closeModal('contact')">&times;</span>
             <h2>Contact</h2>
             <p>Email: devadigashravyas3@gmail.com</p>
-            <p>Phone: +91 9945430483</p>
             <p>Address: Padubidri, Udupi, Karnataka</p>
         </div>
     </div>
+
+    
+
 
     <script src="script.js"></script>
 </body>

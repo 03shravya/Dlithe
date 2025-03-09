@@ -33,11 +33,24 @@ function displaySkills() {
     });
 }
 
-function calculateAge() {
-    let birthYear = prompt("Enter your birth year:");
-    let currentYear = new Date().getFullYear();
-    let age = currentYear - birthYear;
-    alert(`You are approximately ${age} years old!`);
-}
 
 document.addEventListener("DOMContentLoaded", displaySkills);
+
+function toggleTheme() {
+    let body = document.body;
+    let currentTheme = body.getAttribute("data-theme");
+    
+    if (currentTheme === "light") {
+        body.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    } else {
+        body.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// Maintain theme across reloads
+window.onload = function() {
+    let savedTheme = localStorage.getItem("theme") || "light";
+    document.body.setAttribute("data-theme", savedTheme);
+};

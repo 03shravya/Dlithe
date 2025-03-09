@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Blogs</title>
     <style>
-        body {
+        /* General Styles */
+/* General Styles */
+body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -62,37 +64,52 @@
             background: #0056b3;
         }
 
-        /* Popup Modal - Portrait Style */
+        /* Smaller Registration Popup */
         .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            align-items: center;
-            justify-content: center;
-        }
-        .popup-content {
-            background: white;
-            padding: 50px;
-            border-radius: 10px;
-            width: 50%;
-            max-height: 80vh;
-            overflow-y: auto;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .popup-content h2 {
-            font-size: 2.5em;
-        }
-        .popup-content p {
-            font-size: 1.3em;
-        }
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+.popup-content {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+.popup-content h2 {
+    margin-bottom: 15px;
+}
+
+.popup-content form input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-content form button {
+    background: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-content form button:hover {
+    background: #0056b3;
+}
+
+
         .close-btn {
             position: absolute;
             top: 10px;
@@ -139,121 +156,143 @@
         .reset-btn:hover {
             background: #c9302c;
         }
+
+
     </style>
 </head>
 <body>
-    <h1>Latest News & Blogs</h1>
-    <button id="registerBtn" class="register-btn" onclick="openRegisterPopup()">Register</button>
-    <button id="resetBtn" class="reset-btn" onclick="resetRegistration()">Reset Registration</button>
+    <header>
+        <h1>Latest News & Blogs</h1>
+        <button id="registerBtn" class="btn" onclick="openRegisterPopup()">Register</button>
+        <button id="resetBtn" class="btn reset" onclick="resetRegistration()">Reset Registration</button>
+    </header>
 
-    <div class="news-container">
-        <div class="news-card">
-            <img src="ai.jpg" alt="Blog 1">
-            <h2>AI Revolution in 2025</h2>
-            <p>Published on: Feb 24, 2025</p>
-            <button class="btn" onclick="openPopup('popup1')">Read More</button>
-        </div>
-        
-        <div class="news-card">
-            <img src="cloud.jpg" alt="Blog 2">
-            <h2>Cloud Computing Trends</h2>
-            <p>Published on: Feb 20, 2025</p>
-            <button class="btn" onclick="openPopup('popup2')">Read More</button>
-        </div>
-    
-        <div class="news-card">
-            <img src="cyber.jpg" alt="Blog 3">
-            <h2>Cybersecurity Challenges</h2>
-            <p>Published on: Feb 18, 2025</p>
-            <button class="btn" onclick="openPopup('popup3')">Read More</button>
-        </div>
+    <!-- News Container -->
+    <section class="news-container" id="newsContainer">
+        <!-- News articles will be dynamically inserted here -->
+    </section>
 
-        <div class="news-card">
-            <img src="web.jpg" alt="Blog 4">
-            <h2>The Future of Web 3.0</h2>
-            <p>Published on: Feb 15, 2025</p>
-            <button class="btn" onclick="openPopup('popup4')">Read More</button>
-        </div>
-    </div>
-
-    <!-- Popups in Portrait Style -->
-    <div id="popup1" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup('popup1')">&times;</span>
-            <h2>AI Revolution in 2025</h2>
-            <p>Artificial Intelligence is transforming industries, enabling automation, and enhancing decision-making...</p>
-        </div>
-    </div>
-
-    <div id="popup2" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup('popup2')">&times;</span>
-            <h2>Cloud Computing Trends</h2>
-            <p>Cloud technology is advancing rapidly, bringing new capabilities in security, scalability, and cost efficiency...</p>
-        </div>
-    </div>
-    
-    <div id="popup3" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup('popup3')">&times;</span>
-            <h2>Cybersecurity Challenges</h2>
-            <p>With increasing cyber threats, organizations must adopt better security measures to protect sensitive data...</p>
-        </div>
-    </div>
-
-    <div id="popup4" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup('popup4')">&times;</span>
-            <h2>The Future of Web 3.0</h2>
-            <p>Web 3.0 aims to decentralize the internet, bringing more privacy, transparency, and user control...</p>
-        </div>
-    </div>
-
+    <!-- Registration Popup -->
     <div id="registerPopup" class="popup">
         <div class="popup-content">
             <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
             <h2>Register</h2>
             <form onsubmit="registerUser(event)">
-                <input type="text" id="fullName" placeholder="Full Name" required><br>
-                <input type="email" id="email" placeholder="Email" required><br>
-                <button type="submit">Submit</button>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </div>
     </div>
     
     <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = "flex";
-        }
+        const newsArticles = [
+    { title: "AI Revolution in 2025", date: "Feb 24, 2025", image: "ai.jpg", content: "AI is changing industries rapidly..." },
+    { title: "Cloud Computing Trends", date: "Feb 20, 2025", image: "cloud.jpg", content: "Cloud technology continues to evolve..." },
+    { title: "Cybersecurity Challenges", date: "Feb 18, 2025", image: "cyber.jpg", content: "Cyber threats are increasing globally..." },
+    { title: "The Future of Web 3.0", date: "Feb 15, 2025", image: "web.jpg", content: "Web 3.0 is decentralizing the internet..." }
+];
 
-        function closePopup(id) {
-            document.getElementById(id).style.display = "none";
-        }
-        function openRegisterPopup() {
-            document.getElementById("registerPopup").style.display = "flex";
-        }
+// User registration status (Boolean)
+let isRegistered = localStorage.getItem("registered") === "true";
 
-        function closeRegisterPopup() {
-            document.getElementById("registerPopup").style.display = "none";
-        }
+// Function to Load News Articles Dynamically
+function loadNews() {
+    let newsContainer = document.getElementById("newsContainer");
+    newsContainer.innerHTML = ""; // Clear previous content
 
-        function registerUser(event) {
-            event.preventDefault();
-            localStorage.setItem("registered", "true");
-            document.getElementById("registerBtn").style.display = "none";
-            closeRegisterPopup();
-        }
+    newsArticles.forEach((news, index) => {
+        newsContainer.innerHTML += `
+            <div class="news-card">
+                <img src="${news.image}" alt="${news.title}">
+                <h2>${news.title}</h2>
+                <p>Published on: ${news.date}</p>
+                <button class="btn" onclick="openPopup(${index})">Read More</button>
+            </div>
+        `;
+    });
+}
 
-        function resetRegistration() {
-            localStorage.removeItem("registered");
-            document.getElementById("registerBtn").style.display = "block";
-        }
+// Function to Open News Popup
+function openPopup(index) {
+    let popupHTML = `
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>${newsArticles[index].title}</h2>
+            <p>${newsArticles[index].content}</p>
+        </div>
+    `;
 
-        window.onload = function() {
-            if (localStorage.getItem("registered") === "true") {
-                document.getElementById("registerBtn").style.display = "none";
-            }
-        };
+    let popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.innerHTML = popupHTML;
+    popup.style.display = "flex";
+    popup.id = "newsPopup";
+    document.body.appendChild(popup);
+}
+
+// Function to Close News Popup
+function closePopup() {
+    let popup = document.getElementById("newsPopup");
+    if (popup) popup.remove();
+}
+
+// Function to Open Registration Popup
+function openRegisterPopup() {
+    document.getElementById("registerPopup").style.display = "flex";
+}
+
+// Function to Close Registration Popup
+function closeRegisterPopup() {
+    document.getElementById("registerPopup").style.display = "none";
+}
+
+// Function to Register User
+function registerUser(event) {
+    event.preventDefault();
+    
+    let fullName = document.getElementById("fullName").value.trim();
+    let email = document.getElementById("email").value.trim();
+
+    // Validate user input
+    if (fullName.length < 3) {
+        alert("Name must be at least 3 characters long.");
+        return;
+    }
+
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+    alert("Enter a valid email with a dot (.) in the domain, e.g., example@domain.com");
+    return;
+}
+
+
+    localStorage.setItem("registered", "true");
+    localStorage.setItem("userName", fullName);
+    
+    document.getElementById("registerBtn").style.display = "none";
+    closeRegisterPopup();
+    location.reload();
+}
+
+// Function to Reset Registration
+function resetRegistration() {
+    if (confirm("Are you sure you want to reset registration?")) {
+        localStorage.removeItem("registered");
+        localStorage.removeItem("userName");
+        document.getElementById("registerBtn").style.display = "block";
+        location.reload();
+    }
+}
+
+// On Page Load
+window.onload = function() {
+    if (isRegistered) {
+        document.getElementById("registerBtn").style.display = "none";
+        document.body.insertAdjacentHTML("afterbegin", `<h2>Welcome back, User!</h2>`);
+    }
+
+    loadNews();
+};
     </script>
 </body>
 </html>

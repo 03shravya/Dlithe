@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Blogs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Latest News & Blogs</h1>
+    <button id="registerBtn" class="register-btn" onclick="openRegisterPopup()">Register</button>
+    <button id="resetBtn" class="reset-btn" onclick="resetRegistration()">Reset Registration</button>
+
+    <div class="news-container">
+        <div class="news-card">
+            <img src="ai.jpg" alt="Blog 1">
+            <h2>AI Revolution in 2025</h2>
+            <p>Published on: Feb 24, 2025</p>
+            <button class="btn" onclick="openPopup('popup1')">Read More</button>
+        </div>
+        
+        <div class="news-card">
+            <img src="cloud.jpg" alt="Blog 2">
+            <h2>Cloud Computing Trends</h2>
+            <p>Published on: Feb 20, 2025</p>
+            <button class="btn" onclick="openPopup('popup2')">Read More</button>
+        </div>
+    
+        <div class="news-card">
+            <img src="cyber.jpg" alt="Blog 3">
+            <h2>Cybersecurity Challenges</h2>
+            <p>Published on: Feb 18, 2025</p>
+            <button class="btn" onclick="openPopup('popup3')">Read More</button>
+        </div>
+
+        <div class="news-card">
+            <img src="web.jpg" alt="Blog 4">
+            <h2>The Future of Web 3.0</h2>
+            <p>Published on: Feb 15, 2025</p>
+            <button class="btn" onclick="openPopup('popup4')">Read More</button>
+        </div>
+    </div>
+
+    <!-- Popups -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popup1')">&times;</span>
+            <h2>AI Revolution in 2025</h2>
+            <p>Artificial Intelligence is transforming industries, enabling automation, and enhancing decision-making...</p>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popup2')">&times;</span>
+            <h2>Cloud Computing Trends</h2>
+            <p>Cloud technology is advancing rapidly, bringing new capabilities in security, scalability, and cost efficiency...</p>
+        </div>
+    </div>
+    
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popup3')">&times;</span>
+            <h2>Cybersecurity Challenges</h2>
+            <p>With increasing cyber threats, organizations must adopt better security measures to protect sensitive data...</p>
+        </div>
+    </div>
+
+    <div id="popup4" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popup4')">&times;</span>
+            <h2>The Future of Web 3.0</h2>
+            <p>Web 3.0 aims to decentralize the internet, bringing more privacy, transparency, and user control...</p>
+        </div>
+    </div>
+
+    <div id="registerPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
+            <h2>Register</h2>
+            <form onsubmit="registerUser(event)">
+                <input type="text" id="fullName" placeholder="Full Name" required><br>
+                <input type="email" id="email" placeholder="Email" required><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

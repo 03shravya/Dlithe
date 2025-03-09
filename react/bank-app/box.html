@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Visualization</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Outer Box (Margin Area) */
+        .margin-box {
+            background: rgba(255, 0, 0, 0.2);
+            padding: 50px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        /* Border Area */
+        .border-box {
+            border: 10px solid #ff5733;
+            padding: 40px;
+            background: rgba(255, 87, 51, 0.2);
+            border-radius: 15px;
+        }
+
+        /* Padding Area */
+        .padding-box {
+            background: rgba(255, 223, 186, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        /* Content Box */
+        .content-box {
+            width: 400px;
+            height: 200px;
+            background: white;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Hover Effect */
+        .content-box:hover {
+            transform: scale(1.1);
+            box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="margin-box">Margin Area
+        <div class="border-box">Border Area
+            <div class="padding-box">Padding Area
+                <div class="content-box">Content</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
